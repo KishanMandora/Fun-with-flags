@@ -1,10 +1,20 @@
 import React from "react";
 
-let myName = prompt("enter your name");
-const color = "blue";
+let counter = 0;
 
 function App() {
-  return <h1 style={{ color: color }}> WELCOME {myName} </h1>;
+  function clickConsole() {
+    counter++;
+    console.log(counter);
+    console.log("clicked");
+  }
+
+  return (
+    <>
+      <h1> Welcome </h1>
+      <button onClick={clickConsole}> click ME</button>
+    </>
+  );
 }
 
 export default App;
