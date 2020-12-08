@@ -22,8 +22,12 @@ function App() {
       <input onChange={changeHandler} />
       <div>Welcome {userInput}</div>
       <ul>
-        {listItems.map((item) => {
-          return <li> {item} </li>;
+        {listItems.map((item, index) => {
+          if (index % 2) {
+            return <li style={{ backgroundColor: "gray" }}> {item} </li>;
+          } else {
+            return <li> {item} </li>;
+          }
         })}
       </ul>
     </>
