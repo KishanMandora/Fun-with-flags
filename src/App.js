@@ -1,18 +1,16 @@
-import React from "react";
-
-let counter = 0;
+import React, { useState } from "react";
 
 function App() {
-  function clickConsole() {
-    counter++;
-    console.log(counter);
-    console.log("clicked");
+  const [likeCount, setCount] = useState(0);
+  function likeCounter() {
+    let newLikeCount = likeCount++;
+    setCount(newLikeCount);
   }
 
   return (
     <>
       <h1> Welcome </h1>
-      <button onClick={clickConsole}> click ME</button>
+      <button onClick={likeCounter}> click ME </button> {likeCount}
     </>
   );
 }
